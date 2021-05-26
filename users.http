@@ -1,0 +1,36 @@
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+    "givenName": "SCH",
+    "firstName": "Marc",
+    "birthday": "06/06/1986",
+    "phone": "06.06.06.06.06",
+    "email": "marco2@email.com"
+}
+
+###
+
+
+GET http://localhost:8000/users
+
+###
+
+GET http://localhost:8000/users/60ae53addfd8d07004517a17
+
+###
+
+PUT http://localhost:8000/users/60ae53addfd8d07004517a17
+Content-Type: application/json
+
+{
+    "givenName": "LN",
+    "firstName": "Charly",
+    "birthday": "10/02/1989",
+    "phone": "06.06.06.06.06",
+    "email": "charly@email.com"
+}
+
+###
+
+DELETE http://localhost:8000/users/60ae53addfd8d07004517a17/delete
