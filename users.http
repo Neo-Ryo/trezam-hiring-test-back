@@ -5,7 +5,7 @@ Content-Type: application/json
     "givenName": "SCH",
     "firstName": "Marco",
     "birthday": "06-06-1986",
-    "phone": "06.06.06.06.06",
+    "phone": "06-06-06-06-06",
     "email": "marco3@email.com"
 }
 
@@ -17,7 +17,7 @@ Content-Type: application/json
     "givenName": "LN",
     "firstName": "Charly",
     "birthday": "10/02/1989",
-    "phone": "06.06.06.06.06",
+    "phone": "06-06-06-06-06",
     "email": "charly@email.com"
 }
 
@@ -31,15 +31,15 @@ GET http://localhost:8000/users/60ae53addfd8d07004517a17
 
 ###
 
-PUT http://localhost:8000/users/60ae53addfd8d07004517a17
+PUT http://localhost:8000/users/60af9f6d2eb307630e14d6f6
 Content-Type: application/json
 
 {
-    "givenName": "LN",
-    "firstName": "Charly",
+    "givenName": "TOTO",
+    "firstName": "toto",
     "birthday": "10/02/1989",
-    "phone": "06.06.06.06.06",
-    "email": "charly@email.com"
+    "phone": "06-06-06-06-06",
+    "email": "charly2@email.com"
 }
 
 ###
