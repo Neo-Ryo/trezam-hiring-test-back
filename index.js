@@ -14,10 +14,10 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const { DB_NAME, DB_PWD } = process.env;
+const { DB_USER, DB_PWD } = process.env;
 
-//mongo client
-const uri = `mongodb+srv://neo-ryo:${DB_PWD}@cluster0.8aqpq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+//mongo atlas client
+const uri = `mongodb+srv://${DB_USER}:${DB_PWD}@cluster0.8aqpq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -38,7 +38,7 @@ db.once('open', function () {
       await user.save();
       res.status(201).json({ message: 'user saved' });
     } catch (error) {
-      res.status(400).json(error);
+      res.status(400).json({ message: 'email already exist' });
       console.log(error);
     }
   });
