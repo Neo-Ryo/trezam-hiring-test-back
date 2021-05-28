@@ -81,7 +81,7 @@ db.once('open', function () {
     try {
       const { id } = req.params;
       const deletedUser = await users.findByIdAndDelete({ _id: id });
-      res.status(202).json(deletedUser);
+      res.status(202).json({ message: 'user deleted!' });
     } catch (error) {
       res.status(400).json(error);
     }
