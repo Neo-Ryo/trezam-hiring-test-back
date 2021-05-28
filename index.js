@@ -14,11 +14,11 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const { DB_USER, DB_PWD } = process.env;
+const { DB_URI } = process.env;
 
 //mongo atlas client
-const uri = `mongodb+srv://${DB_USER}:${DB_PWD}@cluster0.8aqpq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
